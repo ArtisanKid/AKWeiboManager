@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AKWeiboManager_Example' do
+  pod 'AKWeiboManager', :path => '../'
+
+  target 'AKWeiboManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
