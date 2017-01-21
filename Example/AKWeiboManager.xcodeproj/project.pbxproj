@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0511ACD4E659D23926D619B9 /* Pods_AKWeiboManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AF954B12EEE4823A236EF4 /* Pods_AKWeiboManager_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
@@ -21,8 +19,9 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		7E2D8F1047C4D9CCCD00B826 /* Pods_AKWeiboManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1903900742ACDBAEDCE74952 /* Pods_AKWeiboManager_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		B56681264F58209CFBAB412D /* Pods_AKWeiboManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3255ED91459690365B8BC45 /* Pods_AKWeiboManager_Tests.framework */; };
+		BB0B9AC468D26DD725B604E0 /* Pods_AKWeiboManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B5BB2871D31F09748AFDDE /* Pods_AKWeiboManager_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +35,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12AF954B12EEE4823A236EF4 /* Pods_AKWeiboManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKWeiboManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1903900742ACDBAEDCE74952 /* Pods_AKWeiboManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKWeiboManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DBF5D401E338CF30090C1DB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1DBF5D421E338D050090C1DB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1DBF5D441E338D130090C1DB /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		1DBF5D461E338D4C0090C1DB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1DBF5D481E338D660090C1DB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1DBF5D4A1E338D8D0090C1DB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1DBF5D4C1E338DE80090C1DB /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		1DBF5D4E1E338E400090C1DB /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		1DBF5D501E338E790090C1DB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3733E296E67E5222E29DF0DE /* Pods-AKWeiboManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKWeiboManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKWeiboManager_Tests/Pods-AKWeiboManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		3A6784D01529FEE6788380CC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3A6784D01529FEE6788380CC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* AKWeiboManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKWeiboManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,11 +65,13 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		69B5BB2871D31F09748AFDDE /* Pods_AKWeiboManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKWeiboManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8A099776F9BA2AA0A22799 /* Pods-AKWeiboManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKWeiboManager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKWeiboManager_Example/Pods-AKWeiboManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ADC71CB1E339072F4DBFC380 /* Pods-AKWeiboManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKWeiboManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKWeiboManager_Example/Pods-AKWeiboManager_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B8CD9A930ECADE1DCFC70DEE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E0552D51D949C0DA651D84B0 /* AKWeiboManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AKWeiboManager.podspec; path = ../AKWeiboManager.podspec; sourceTree = "<group>"; };
+		B8CD9A930ECADE1DCFC70DEE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C3255ED91459690365B8BC45 /* Pods_AKWeiboManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKWeiboManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0552D51D949C0DA651D84B0 /* AKWeiboManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AKWeiboManager.podspec; path = ../AKWeiboManager.podspec; sourceTree = "<group>"; };
 		FF6F048034BCC3243BA8E6FC /* Pods-AKWeiboManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKWeiboManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKWeiboManager_Tests/Pods-AKWeiboManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,10 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				0511ACD4E659D23926D619B9 /* Pods_AKWeiboManager_Example.framework in Frameworks */,
+				BB0B9AC468D26DD725B604E0 /* Pods_AKWeiboManager_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +93,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				7E2D8F1047C4D9CCCD00B826 /* Pods_AKWeiboManager_Tests.framework in Frameworks */,
+				B56681264F58209CFBAB412D /* Pods_AKWeiboManager_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,12 +124,21 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DBF5D501E338E790090C1DB /* libz.tbd */,
+				1DBF5D4E1E338E400090C1DB /* libstdc++.6.tbd */,
+				1DBF5D4C1E338DE80090C1DB /* ImageIO.framework */,
+				1DBF5D4A1E338D8D0090C1DB /* CoreTelephony.framework */,
+				1DBF5D481E338D660090C1DB /* QuartzCore.framework */,
+				1DBF5D461E338D4C0090C1DB /* SystemConfiguration.framework */,
+				1DBF5D441E338D130090C1DB /* libstdc++.tbd */,
+				1DBF5D421E338D050090C1DB /* libc++.tbd */,
+				1DBF5D401E338CF30090C1DB /* libsqlite3.tbd */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				12AF954B12EEE4823A236EF4 /* Pods_AKWeiboManager_Example.framework */,
-				1903900742ACDBAEDCE74952 /* Pods_AKWeiboManager_Tests.framework */,
+				69B5BB2871D31F09748AFDDE /* Pods_AKWeiboManager_Example.framework */,
+				C3255ED91459690365B8BC45 /* Pods_AKWeiboManager_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,9 +260,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AK;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Freud;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = HCU65H62VB;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -447,14 +466,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -487,13 +511,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -513,6 +542,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = HCU65H62VB;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AKWeiboManager/AKWeiboManager-Prefix.pch";
 				INFOPLIST_FILE = "AKWeiboManager/AKWeiboManager-Info.plist";
@@ -529,6 +560,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = HCU65H62VB;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AKWeiboManager/AKWeiboManager-Prefix.pch";
 				INFOPLIST_FILE = "AKWeiboManager/AKWeiboManager-Info.plist";
