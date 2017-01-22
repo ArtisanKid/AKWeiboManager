@@ -65,7 +65,7 @@
 
 @end
 
-@implementation AKWeiboShareObject
+@implementation AKWeiboShareBaseMedia
 
 @end
 
@@ -88,7 +88,6 @@
     object.webpageUrl = self.URL;
     
     WBMessageObject *message = [WBMessageObject message];
-    message.text = self.text;
     message.mediaObject = object;
     return message;
 }
@@ -131,7 +130,6 @@
     }
     
     WBMessageObject *message = [WBMessageObject message];
-    message.text = self.text;
     message.mediaObject = object;
     return message;
 }

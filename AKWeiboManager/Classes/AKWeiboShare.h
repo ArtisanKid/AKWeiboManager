@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "AKWeiboShareProtocol.h"
 
-#pragma mark - AKWeiboShare
+@interface AKWeiboShare : NSObject
 
-@interface AKWeiboShare : NSObject<AKWeiboShareProtocol>
+@end
+
+#pragma mark - AKWeiboShareText
+
+@interface AKWeiboShareText : AKWeiboShare<AKWeiboShareProtocol>
 
 /**
  消息的文本内容，长度小于140个汉字
@@ -20,15 +24,14 @@
 
 @end
 
-#pragma mark - AKWeiboShareText
-
-@interface AKWeiboShareText : AKWeiboShare
-
-@end
-
 #pragma mark - AKWeiboShareImage
 
-@interface AKWeiboShareImage : AKWeiboShare
+@interface AKWeiboShareImage : AKWeiboShare<AKWeiboShareProtocol>
+
+/**
+ 消息的文本内容，长度小于140个汉字
+ */
+@property (nonatomic, copy) NSString *text;
 
 /**
  图片真实数据内容，大小不能超过10M
@@ -39,7 +42,7 @@
 
 #pragma mark - AKWeiboShareObject
 
-@interface AKWeiboShareObject : AKWeiboShare
+@interface AKWeiboShareBaseMedia : AKWeiboShare<AKWeiboShareProtocol>
 
 /**
  对象唯一ID，用于唯一标识一个多媒体内容
@@ -78,7 +81,7 @@
 
 #pragma mark - AKWeiboShareWeb
 
-@interface AKWeiboShareWeb : AKWeiboShareObject
+@interface AKWeiboShareWeb : AKWeiboShareBaseMedia
 
 @end
 
@@ -90,7 +93,7 @@ typedef NS_ENUM(NSUInteger, AKWeiboShareMediaType) {
     AKWeiboShareMediaTypeVideo
 };
 
-@interface AKWeiboShareMedia : AKWeiboShareObject
+@interface AKWeiboShareMedia : AKWeiboShareBaseMedia
 
 @property (nonatomic, assign, readonly) AKWeiboShareMediaType type;
 
