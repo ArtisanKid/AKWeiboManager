@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9D95431BEFBF95F09278E30851AFA2C6D724EDFC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B8F9A397FD3F6C0C7C00AA5BF8F577EFC76B09DA" : 9223372036854775807,
+    "9D95431BEFBF95F09278E30851AFA2C6D724EDFC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "95B5A3EC-80EB-442D-844D-6100D66CF9C9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B8F9A397FD3F6C0C7C00AA5BF8F577EFC76B09DA" : "AKWeiboSDK\/",
+    "9D95431BEFBF95F09278E30851AFA2C6D724EDFC" : "AKWeiboManager\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AKWeiboManager",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/AKWeiboManager.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ArtisanKid\/AKWeiboManager.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D95431BEFBF95F09278E30851AFA2C6D724EDFC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ArtisanKid\/AKWeiboSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B8F9A397FD3F6C0C7C00AA5BF8F577EFC76B09DA"
+    }
+  ]
+}
