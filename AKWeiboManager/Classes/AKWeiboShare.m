@@ -75,7 +75,7 @@
     WBWebpageObject *object = [WBWebpageObject object];
     object.objectID = self.mediaID;
     object.title = self.title;
-    object.description = self.description;
+    object.description = self.detail;
     
     NSData *imageData = nil;
     imageData = UIImageJPEGRepresentation(self.thumbImage, 1.);
@@ -105,7 +105,7 @@
     }
     object.objectID = self.mediaID;
     object.title = self.title;
-    object.description = self.description;
+    object.description = self.detail;
     
     NSData *imageData = nil;
     imageData = UIImageJPEGRepresentation(self.thumbImage, 1.);

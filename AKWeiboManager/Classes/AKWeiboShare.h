@@ -59,7 +59,7 @@
 /**
  多媒体内容描述，长度小于1k
  */
-@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *detail;
 
 /**
  多媒体内容缩略图，大小小于32k

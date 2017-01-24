@@ -49,8 +49,9 @@ TODO: Add long description of the pod here.
   #end
 
   s.pod_target_xcconfig = {
-    'OTHER_LDFLAGS' => '$(inherited) -undefined dynamic_lookup',
-    'ENABLE_BITCODE' => 'NO'
+#'OTHER_LDFLAGS' => '$(inherited) -undefined dynamic_lookup',
+#'ENABLE_BITCODE' => 'NO'
+    'MACH_O_TYPE' => 'staticlib'
   }
 
 end
