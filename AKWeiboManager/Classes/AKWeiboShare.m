@@ -27,7 +27,7 @@
 }
 
 - (WBShareMessageToContactRequest *)messageToContact {
-    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest request];
+    WBShareMessageToContactRequest *request = [WBShareMessageToContactRequest request];
     request.shouldOpenWeiboAppInstallPageIfNotInstalled = YES;
     request.message = [self message];
     return request;
@@ -94,15 +94,38 @@
 
 @end
 
-@implementation AKWeiboShareMedia
+@implementation AKWeiboShareAudio
 
 - (WBMessageObject *)message {
-    WBBaseMediaObject *object = nil;
-    if(self.type == AKWeiboShareMediaTypeMusic) {
-        object = [WBMusicObject object];
-    } else if (self.type == AKWeiboShareMediaTypeVideo) {
-        object = [WBVideoObject object];
+    WBMusicObject *object = [WBMusicObject object];
+    object.objectID = self.mediaID;
+    object.title = self.title;
+    object.description = self.detail;
+    
+    NSData *imageData = nil;
+    imageData = UIImageJPEGRepresentation(self.thumbImage, 1.);
+    if(!imageData.length) {
+        imageData = UIImagePNGRepresentation(self.thumbImage);
     }
+    object.thumbnailData = imageData;
+    object.scheme = self.schemeURL;
+    
+    object.musicUrl = self.URL;
+    object.musicLowBandUrl = self.lowBandURL;
+    object.musicStreamUrl = self.streamURL;
+    object.musicLowBandStreamUrl = self.lowBandStreamURL;
+    
+    WBMessageObject *message = [WBMessageObject message];
+    message.mediaObject = object;
+    return message;
+}
+
+@end
+
+@implementation AKWeiboShareVideo
+
+- (WBMessageObject *)message {
+    WBVideoObject *object = [WBVideoObject object];
     object.objectID = self.mediaID;
     object.title = self.title;
     object.description = self.detail;
@@ -115,19 +138,11 @@
     object.thumbnailData = imageData;
     
     object.scheme = self.schemeURL;
-    if(self.type == AKWeiboShareMediaTypeMusic) {
-        WBMusicObject *musicObject = (WBMusicObject *)object;
-        musicObject.musicUrl = self.URL;
-        musicObject.musicLowBandUrl = self.lowBandURL;
-        musicObject.musicStreamUrl = self.streamURL;
-        musicObject.musicLowBandStreamUrl = self.lowBandStreamURL;
-    } else if (self.type == AKWeiboShareMediaTypeVideo) {
-        WBVideoObject *videoObject = (WBVideoObject *)object;
-        videoObject.videoUrl = self.URL;
-        videoObject.videoLowBandUrl = self.lowBandURL;
-        videoObject.videoStreamUrl = self.streamURL;
-        videoObject.videoLowBandStreamUrl = self.lowBandStreamURL;
-    }
+    
+    object.videoUrl = self.URL;
+    object.videoLowBandUrl = self.lowBandURL;
+    object.videoStreamUrl = self.streamURL;
+    object.videoLowBandStreamUrl = self.lowBandStreamURL;
     
     WBMessageObject *message = [WBMessageObject message];
     message.mediaObject = object;

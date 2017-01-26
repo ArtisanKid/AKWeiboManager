@@ -14,6 +14,9 @@
 #import "AKWeiboManagerMacro.h"
 #import "AKWeiboUser.h"
 
+const NSString * const AKWeiboManagerErrorKeyStateCode = @"stateCode";
+const NSString * const AKWeiboManagerErrorKeyAlert = @"alert";
+
 @interface AKWeiboManager () <WeiboSDKDelegate, WBHttpRequestDelegate>
 
 @property (nonatomic, strong) NSString *appID;
@@ -57,17 +60,28 @@ static NSString * const AKWeiboManagerAppRedirectURI = @"http://sns.whalecloud.c
 }
 
 #pragma mark- Private Method
+/*
+ WeiboSDKResponseStatusCodeSuccess               = 0,//成功
+ WeiboSDKResponseStatusCodeUserCancel            = -1,//用户取消发送
+ WeiboSDKResponseStatusCodeSentFail              = -2,//发送失败
+ WeiboSDKResponseStatusCodeAuthDeny              = -3,//授权失败
+ WeiboSDKResponseStatusCodeUserCancelInstall     = -4,//用户取消安装微博客户端
+ WeiboSDKResponseStatusCodePayFail               = -5,//支付失败
+ WeiboSDKResponseStatusCodeShareInSDKFailed      = -8,//分享失败 详情见response UserInfo
+ WeiboSDKResponseStatusCodeUnsupport             = -99,//不支持的请求
+ WeiboSDKResponseStatusCodeUnknown               = -100,
+ */
 - (NSString *)alert:(WeiboSDKResponseStatusCode)stateCode {
     NSString *alert = nil;
     switch (stateCode) {
-        case WeiboSDKResponseStatusCodeUserCancel: { alert = @"取消发送"; break; }
-        case WeiboSDKResponseStatusCodeSentFail: { alert = @"发送失败"; break; }
-        case WeiboSDKResponseStatusCodeAuthDeny: { alert = @"授权失败"; break; }
-        case WeiboSDKResponseStatusCodeUserCancelInstall: { alert = @"取消安装微博"; break; }
-        case WeiboSDKResponseStatusCodePayFail: { alert = @"支付失败"; break; }
-        case WeiboSDKResponseStatusCodeShareInSDKFailed: { alert = @"分享失败"; break; }
-        case WeiboSDKResponseStatusCodeUnsupport: { alert = @"微博不支持"; break; }
-        case WeiboSDKResponseStatusCodeUnknown: { alert = @"未知错误"; break; }
+        case WeiboSDKResponseStatusCodeUserCancel: alert = @"取消发送"; break;
+        case WeiboSDKResponseStatusCodeSentFail: alert = @"发送失败"; break;
+        case WeiboSDKResponseStatusCodeAuthDeny: alert = @"授权失败"; break;
+        case WeiboSDKResponseStatusCodeUserCancelInstall: alert = @"取消安装微博"; break;
+        case WeiboSDKResponseStatusCodePayFail: alert = @"支付失败"; break;
+        case WeiboSDKResponseStatusCodeShareInSDKFailed: alert = @"分享失败"; break;
+        case WeiboSDKResponseStatusCodeUnsupport: alert = @"微博不支持"; break;
+        case WeiboSDKResponseStatusCodeUnknown: alert = @"未知错误"; break;
         default: break;
     }
     return alert;
@@ -128,23 +142,12 @@ static NSString * const AKWeiboManagerAppRedirectURI = @"http://sns.whalecloud.c
  收到微博的响应后，第三方应用可以通过响应类型、响应的数据和 WBBaseResponse.userInfo 中的数据完成自己的功能
  @param response 具体的响应对象
  */
-/*
- WeiboSDKResponseStatusCodeSuccess               = 0,//成功
- WeiboSDKResponseStatusCodeUserCancel            = -1,//用户取消发送
- WeiboSDKResponseStatusCodeSentFail              = -2,//发送失败
- WeiboSDKResponseStatusCodeAuthDeny              = -3,//授权失败
- WeiboSDKResponseStatusCodeUserCancelInstall     = -4,//用户取消安装微博客户端
- WeiboSDKResponseStatusCodePayFail               = -5,//支付失败
- WeiboSDKResponseStatusCodeShareInSDKFailed      = -8,//分享失败 详情见response UserInfo
- WeiboSDKResponseStatusCodeUnsupport             = -99,//不支持的请求
- WeiboSDKResponseStatusCodeUnknown               = -100,
- */
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
     if(response.statusCode != WeiboSDKResponseStatusCodeSuccess) {
-        NSMutableDictionary *userInfo = [@{@"statusCode" : @(response.statusCode)} mutableCopy];
+        NSMutableDictionary *userInfo = [@{AKWeiboManagerErrorKeyStateCode : @(response.statusCode)} mutableCopy];
         NSString *alert = [self alert:response.statusCode];
         if(alert) {
-            userInfo[@"alert"] = alert;
+            userInfo[AKWeiboManagerErrorKeyAlert] = alert;
         }
         NSError *error = [NSError errorWithDomain:NSStringFromClass([self class]) code:response.statusCode userInfo:userInfo];
         
@@ -190,7 +193,9 @@ static NSString * const AKWeiboManagerAppRedirectURI = @"http://sns.whalecloud.c
          }
          
          if(![result isKindOfClass:[WeiboUser class]]) {
-             NSError *error = [NSError errorWithDomain:NSStringFromClass([self class]) code:response.statusCode userInfo:@{ @"alert" : @"登陆失败" }];
+             NSError *error = [NSError errorWithDomain:NSStringFromClass([self class])
+                                                  code:0
+                                              userInfo:@{ AKWeiboManagerErrorKeyAlert : @"登陆失败" }];
              !self.loginFailure ? :  self.loginFailure(error);
              return;
          }

@@ -12,6 +12,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern const NSString * const AKWeiboManagerErrorKeyStateCode;
+extern const NSString * const AKWeiboManagerErrorKeyAlert;
+
 typedef void (^AKWeiboManagerSuccess)();
 typedef void (^AKWeiboManagerLoginSuccess)(id<AKWeiboUserProtocol> user);
 typedef void (^AKWeiboManagerFailure)(NSError *error);

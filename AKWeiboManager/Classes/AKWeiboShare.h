@@ -13,7 +13,7 @@
 
 @end
 
-#pragma mark - AKWeiboShareText
+#pragma mark - AKWeiboShareText : AKWeiboShare
 
 @interface AKWeiboShareText : AKWeiboShare<AKWeiboShareProtocol>
 
@@ -24,7 +24,7 @@
 
 @end
 
-#pragma mark - AKWeiboShareImage
+#pragma mark - AKWeiboShareImage : AKWeiboShare
 
 @interface AKWeiboShareImage : AKWeiboShare<AKWeiboShareProtocol>
 
@@ -40,9 +40,9 @@
 
 @end
 
-#pragma mark - AKWeiboShareObject
+#pragma mark - AKWeiboShareObject : AKWeiboShare
 
-@interface AKWeiboShareBaseMedia : AKWeiboShare<AKWeiboShareProtocol>
+@interface AKWeiboShareBaseMedia : AKWeiboShare
 
 /**
  对象唯一ID，用于唯一标识一个多媒体内容
@@ -79,23 +79,15 @@
 
 @end
 
-#pragma mark - AKWeiboShareWeb
+#pragma mark - AKWeiboShareWeb : AKWeiboShareBaseMedia
 
-@interface AKWeiboShareWeb : AKWeiboShareBaseMedia
+@interface AKWeiboShareWeb : AKWeiboShareBaseMedia<AKWeiboShareProtocol>
 
 @end
 
-#pragma mark - AKWeiboShareMedia
+#pragma mark - AKWeiboShareAudio : AKWeiboShareBaseMedia
 
-typedef NS_ENUM(NSUInteger, AKWeiboShareMediaType) {
-    AKWeiboShareMediaTypeNone,
-    AKWeiboShareMediaTypeMusic,
-    AKWeiboShareMediaTypeVideo
-};
-
-@interface AKWeiboShareMedia : AKWeiboShareBaseMedia
-
-@property (nonatomic, assign, readonly) AKWeiboShareMediaType type;
+@interface AKWeiboShareAudio : AKWeiboShareBaseMedia<AKWeiboShareProtocol>
 
 /**
  音乐与视频的低带网页url地址，长度不能超过10K
@@ -113,3 +105,25 @@ typedef NS_ENUM(NSUInteger, AKWeiboShareMediaType) {
 @property (nonatomic, copy) NSString *lowBandStreamURL;
 
 @end
+
+#pragma mark - AKWeiboShareVideo : AKWeiboShareBaseMedia
+
+@interface AKWeiboShareVideo : AKWeiboShareBaseMedia<AKWeiboShareProtocol>
+
+/**
+ 音乐与视频的低带网页url地址，长度不能超过10K
+ */
+@property (nonatomic, copy) NSString *lowBandURL;
+
+/**
+ 音乐与视频数据流的url地址，长度不能超过255字节
+ */
+@property (nonatomic, copy) NSString *streamURL;
+
+/**
+ 音乐与视频数据流的url地址，长度不能超过255字节
+ */
+@property (nonatomic, copy) NSString *lowBandStreamURL;
+
+@end
+
