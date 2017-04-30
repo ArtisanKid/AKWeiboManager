@@ -547,6 +547,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AKWeiboManager/AKWeiboManager-Prefix.pch";
 				INFOPLIST_FILE = "AKWeiboManager/AKWeiboManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/../../../AKWeiboSDK/AKWeiboSDK/Classes\"",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,6 +569,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AKWeiboManager/AKWeiboManager-Prefix.pch";
 				INFOPLIST_FILE = "AKWeiboManager/AKWeiboManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/../../../AKWeiboSDK/AKWeiboSDK/Classes\"",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

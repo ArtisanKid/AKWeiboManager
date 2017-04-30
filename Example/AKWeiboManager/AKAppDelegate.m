@@ -7,6 +7,7 @@
 //
 
 #import "AKAppDelegate.h"
+#import <AKWeiboManager/AKWeiboManager.h>
 
 @implementation AKAppDelegate
 

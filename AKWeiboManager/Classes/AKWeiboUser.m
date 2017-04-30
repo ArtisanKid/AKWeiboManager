@@ -9,5 +9,17 @@
 #import "AKWeiboUser.h"
 
 @implementation AKWeiboUser
+    
+- (void)invalid {
+    self.accessToken = nil;
+    self.refreshToken = nil;
+    self.expiredTime = 0;
+    self.openID = nil;
+    self.unionID = nil;
+    self.nickname = nil;
+    self.portrait = nil;
+    self.mobile = nil;
+    self.motto = nil;
+}
 
 @end

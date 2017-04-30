@@ -12,8 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern const NSString * const AKWeiboManagerErrorKeyStateCode;
-extern const NSString * const AKWeiboManagerErrorKeyAlert;
+extern const NSString * const AKWeiboManagerErrorCodeKey;
+extern const NSString * const AKWeiboManagerErrorMessageKey;
 
 typedef void (^AKWeiboManagerSuccess)();
 typedef void (^AKWeiboManagerLoginSuccess)(id<AKWeiboUserProtocol> user);
@@ -21,14 +21,16 @@ typedef void (^AKWeiboManagerFailure)(NSError *error);
 
 @interface AKWeiboManager : NSObject
 
-+ (void)setAppID:(NSString *)appID secretKey:(NSString *)secretKey;
-
 /**
  标准单例模式
  
  @return AKWeiboManager
  */
 + (AKWeiboManager *)manager;
+    
+@property (class, nonatomic, assign, getter=isDebug) BOOL debug;
+    
++ (void)setAppID:(NSString *)appID secretKey:(NSString *)secretKey;
 
 //处理从Application回调方法获取的URL
 + (BOOL)handleOpenURL:(NSURL *)url;

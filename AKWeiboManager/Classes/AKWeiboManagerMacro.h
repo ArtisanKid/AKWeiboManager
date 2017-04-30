@@ -9,31 +9,37 @@
 #ifndef AKWeiboManagerMacro_h
 #define AKWeiboManagerMacro_h
 
-static BOOL AKWeiboManagerLogState = YES;
-
-#define AKWeiboManagerLogFormat(INFO, ...) [NSString stringWithFormat:(@"\n[Date:%s]\n[Time:%s]\n[File:%s]\n[Line:%d]\n[Function:%s]\n" INFO @"\n"), __DATE__, __TIME__, __FILE__, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__]
-
 #if DEBUG
-#define AKWeiboManagerLog(INFO, ...) !AKWeiboManagerLogState ? : NSLog((@"\n[Date:%s]\n[Time:%s]\n[File:%s]\n[Line:%d]\n[Function:%s]\n" INFO @"\n"), __DATE__, __TIME__, __FILE__, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__);
+    #define AKWeiboManagerLog(_Format, ...) NSLog((@"\n[File:%s]\n[Line:%d]\n[Function:%s]\n" _Format), __FILE__, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__);printf("\n");
 #else
-#define AKWeiboManagerLog(INFO, ...)
+    #define AKWeiboManagerLog(_Format, ...)
 #endif
 
 //nil和类型判断
-#define AK_WBM_Nilable_Class_Return(_obj, _nilable, _class, _stuff, ...) \
-    if(!_nilable) {\
-        NSParameterAssert(_obj);\
-        if(!_obj) {\
+//_stuff传入{}(代码块)
+
+#define AKWBM_String_Nilable_Return(_string, _nilable, _stuff, ...) \
+    do {\
+        NSString *string = (NSString *)(_string);\
+        if(string) {\
+            if(![string isKindOfClass:[NSString class]]) {\
+                NSAssert(0, nil);\
+                _stuff;\
+                return __VA_ARGS__;\
+            }\
+            \
+            if(!_nilable) {\
+                if(!string.length) {\
+                    NSAssert(0, nil);\
+                    _stuff;\
+                    return __VA_ARGS__;\
+                }\
+            }\
+        } else if(!_nilable) {\
+            NSAssert(0, nil);\
             _stuff;\
             return __VA_ARGS__;\
         }\
-    }\
-    if(_obj) {\
-        NSParameterAssert([_obj isKindOfClass:_class.class]);\
-        if(![_obj isKindOfClass:_class.class]) {\
-            _stuff;\
-            return __VA_ARGS__;\
-    }\
-}
+    } while(0)
 
 #endif /* AKWeiboManagerMacro_h */

@@ -9,29 +9,24 @@
 #import <Foundation/Foundation.h>
 #import "AKWeiboShareProtocol.h"
 
-@interface AKWeiboShare : NSObject
+@interface AKWeiboShare : NSObject<AKWeiboShareProtocol>
+    
+/**
+ 消息的文本内容，长度小于140个汉字
+ */
+@property (nonatomic, copy) NSString *text;
 
 @end
 
 #pragma mark - AKWeiboShareText : AKWeiboShare
 
-@interface AKWeiboShareText : AKWeiboShare<AKWeiboShareProtocol>
-
-/**
- 消息的文本内容，长度小于140个汉字
- */
-@property (nonatomic, copy) NSString *text;
+@interface AKWeiboShareText : AKWeiboShare
 
 @end
 
 #pragma mark - AKWeiboShareImage : AKWeiboShare
 
-@interface AKWeiboShareImage : AKWeiboShare<AKWeiboShareProtocol>
-
-/**
- 消息的文本内容，长度小于140个汉字
- */
-@property (nonatomic, copy) NSString *text;
+@interface AKWeiboShareImage : AKWeiboShare
 
 /**
  图片真实数据内容，大小不能超过10M
@@ -40,9 +35,9 @@
 
 @end
 
-#pragma mark - AKWeiboShareObject : AKWeiboShare
+#pragma mark - AKWeiboShareURL : AKWeiboShare
 
-@interface AKWeiboShareBaseMedia : AKWeiboShare
+@interface AKWeiboShareURL : AKWeiboShare
 
 /**
  对象唯一ID，用于唯一标识一个多媒体内容
@@ -79,15 +74,15 @@
 
 @end
 
-#pragma mark - AKWeiboShareWeb : AKWeiboShareBaseMedia
+#pragma mark - AKWeiboShareWeb : AKWeiboShareURL
 
-@interface AKWeiboShareWeb : AKWeiboShareBaseMedia<AKWeiboShareProtocol>
+@interface AKWeiboShareWeb : AKWeiboShareURL
 
 @end
 
 #pragma mark - AKWeiboShareAudio : AKWeiboShareBaseMedia
 
-@interface AKWeiboShareAudio : AKWeiboShareBaseMedia<AKWeiboShareProtocol>
+@interface AKWeiboShareAudio : AKWeiboShareURL
 
 /**
  音乐与视频的低带网页url地址，长度不能超过10K
@@ -106,9 +101,9 @@
 
 @end
 
-#pragma mark - AKWeiboShareVideo : AKWeiboShareBaseMedia
+#pragma mark - AKWeiboShareVideo : AKWeiboShareURL
 
-@interface AKWeiboShareVideo : AKWeiboShareBaseMedia<AKWeiboShareProtocol>
+@interface AKWeiboShareVideo : AKWeiboShareURL
 
 /**
  音乐与视频的低带网页url地址，长度不能超过10K
