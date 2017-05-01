@@ -207,6 +207,16 @@ static NSString * const AKWeiboManagerAppRedirectURI = @"https://api.weibo.com/o
         self.shareFailure = nil;
     }
 }
+
+/**
+ 收到一个来自微博客户端程序的请求
+ 
+ 收到微博的请求后，第三方应用应该按照请求类型进行处理，处理完后必须通过 [WeiboSDK sendResponse:] 将结果回传给微博
+ @param request 具体的请求对象
+ */
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
+    
+}
     
 #pragma mark- Private Method
 /*

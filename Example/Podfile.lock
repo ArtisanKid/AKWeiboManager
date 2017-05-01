@@ -5,18 +5,23 @@ PODS:
 
 DEPENDENCIES:
   - AKWeiboManager (from `../`)
-  - AKWeiboSDK (from `../../AKWeiboSDK`)
+  - AKWeiboSDK (from `git@github.com:ArtisanKid/AKWeiboSDK.git`)
 
 EXTERNAL SOURCES:
   AKWeiboManager:
     :path: ../
   AKWeiboSDK:
-    :path: ../../AKWeiboSDK
+    :git: git@github.com:ArtisanKid/AKWeiboSDK.git
+
+CHECKOUT OPTIONS:
+  AKWeiboSDK:
+    :commit: a6a96a49cc6ecb581a2bba400dad22a2ba7a849b
+    :git: git@github.com:ArtisanKid/AKWeiboSDK.git
 
 SPEC CHECKSUMS:
-  AKWeiboManager: f1c2c63f9426839fa87de801964f834101d80088
-  AKWeiboSDK: e85ba270f1460373dbd61f415760226dd769fa4b
+  AKWeiboManager: 465bcf322c40d0f378ef4af1ea693c49134c8527
+  AKWeiboSDK: 0d8e5eea7f344e87f657375e308f09b2f6495a93
 
-PODFILE CHECKSUM: 27e2e00059610c8d0b014e7f0e8e0571fe251fe9
+PODFILE CHECKSUM: 799fcd88a504db785d1fd370292e7865b4c52ff5
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
