@@ -3,8 +3,8 @@ use_frameworks!
 target 'AKWeiboManager_Example' do
   pod 'AKWeiboManager', :path => '../'
   
-  pod 'AKWeiboSDK', :git => 'git@github.com:ArtisanKid/AKWeiboSDK.git'
-  #pod 'AKWeiboSDK', :path => '../../AKWeiboSDK'
+  #pod 'AKWeiboSDK', :git => 'git@github.com:ArtisanKid/AKWeiboSDK.git'
+  pod 'AKWeiboSDK', :path => '../../AKWeiboSDK'
   
   pre_install do |installer|
       # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289

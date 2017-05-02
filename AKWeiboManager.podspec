@@ -50,7 +50,7 @@ TODO: Add long description of the pod here.
   #end
 
   s.pod_target_xcconfig = {
-    'OTHER_LDFLAGS' => '-l"WeiboSDK"',
+    'OTHER_LDFLAGS' => '-ObjC -l"WeiboSDK"',
     'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/AKWeiboSDK/**'
   }
 end
